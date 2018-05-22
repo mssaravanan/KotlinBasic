@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+
+    <Button
+        android:id="@+id/buttonInterface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CallInterface" />
+
+    <Button android:id="@+id/buttonAddData1"
+        android:layout_width="match_parent"
+        android:text="Data1"
+        android:layout_height="wrap_content">
+
+    </Button>
+    <Button android:id="@+id/buttonAddData2"
+        android:layout_width="match_parent"
+        android:text="Data2"
+        android:layout_height="wrap_content">
+
+    </Button>
+    <Button android:id="@+id/buttonAddData3"
+        android:layout_width="match_parent"
+        android:text="Data3"
+        android:layout_height="wrap_content">
+
+    </Button>
+
+    <Button
+        android:id="@+id/buttonDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Display" />
+
+</LinearLayout>
