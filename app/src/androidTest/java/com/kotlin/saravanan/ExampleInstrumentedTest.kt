@@ -1,4 +1,4 @@
-package com.augustasoftsol.saravanan
+package com.kotlin.saravanan
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

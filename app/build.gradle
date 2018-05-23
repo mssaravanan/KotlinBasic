@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.augustasoftsol.saravanan"
+        applicationId "com.kotlin.saravanan"
         minSdkVersion 20
         targetSdkVersion 27
         versionCode 1

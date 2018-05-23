@@ -1,8 +1,8 @@
-package com.augustasoftsol.saravanan
+package com.kotlin.saravanan
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 
@@ -28,16 +28,16 @@ class MainActivity : AppCompatActivity() {
 
 
     //Variable with data types
-    var typeInt : Int =12
-    var typeString: String ="Hai"
-    var typeFloat : Float =12f
-    val typeValFloat : Float =12f
+    var typeInt: Int = 12
+    var typeString: String = "Hai"
+    var typeFloat: Float = 12f
+    val typeValFloat: Float = 12f
 
 
     //Null and Not Variable
     //Int? - allows null
-    var allByDefault: Int? =0  // error: explicit initializer required, default getter and setter implied
-    var strNullVal :String ?=null
+    var allByDefault: Int? = 0  // error: explicit initializer required, default getter and setter implied
+    var strNullVal: String? = null
 
 
     /**
@@ -49,12 +49,11 @@ class MainActivity : AppCompatActivity() {
 
     val len = "a is $a".length
 
-    val getValue ="a is $a".get(3)
-
+    val getValue = "a is $a".get(3)
 
 
     //Call method on variable set value
-    var s2 : String
+    var s2: String
         get() = this.toString()
         set(value) {
             varGetSetVariable(value)
@@ -62,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
 
     //Directly call the function
-    var callFunction =returnValue()
+    var callFunction = returnValue()
 
 
     //Declare Method - declare with "fun" keyword for declare method
@@ -74,11 +73,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        typeFloat= 10f
+        typeFloat = 10f
 
 
         //Call method when set value of variable
-        s2="HelloAndroid"
+        s2 = "HelloAndroid"
         //typeValFloat=15f  // Can't be reassigned because val
 
 
@@ -86,41 +85,40 @@ class MainActivity : AppCompatActivity() {
         addValue()
 
         //Call method with return
-        Log.v("Return Value :",returnValue().toString())
-
+        Log.v("Return Value :", returnValue().toString())
 
 
         //Print null if allByDefault is null
         println(strNullVal?.length)
 
         //Check null and print
-        println(strNullVal?.length ?:-1)
+        println(strNullVal?.length ?: -1)
 
         //Print 3
-        strNullVal="HAI"
+        strNullVal = "HAI"
         println(strNullVal?.length)
 
 
         //Print length after allocation
-        allByDefault=10
-        var len =allByDefault.toString()
+        allByDefault = 10
+        var len = allByDefault.toString()
         println(len?.length)
 
 
         //allByDefault!! - If value is null it through null pointer exception
-        passByReturn(floatVar,allByDefault!!)
+        passByReturn(floatVar, allByDefault!!)
 
 
         //Get a value from variable (Char)
-        Log.v("Getter value",getValue.toString())
+        Log.v("Getter value", getValue.toString())
 
         //Print values using $ symbols
-        printValues(10,20f,"Hi",100f)
-        printValues(10,20f,"Hi","String")
+        printValues(10, 20f, "Hi", 100f)
+        printValues(10, 20f, "Hi", "String")
 
         //Default arguments
         defaultArgument(10)
-        defaultArgument(10,"default",99f)
+        defaultArgument(10, "default", 99f)
 
 
         //Static Or Singleton = Object
@@ -129,7 +127,7 @@ class MainActivity : AppCompatActivity() {
 
         //Call via instance of obj
         objClass.callObjValue()
-        val mutableList : MutableList<String> = mutableListOf()
+        val mutableList: MutableList<String> = mutableListOf()
         mutableList.add("Mutable")
         mutableList.add("Kotlin")
         mutableList.add("Java")
@@ -141,7 +139,7 @@ class MainActivity : AppCompatActivity() {
 
         //Companion Object - access type 1
 
-        Log.v("Companion",CompanionObjClass.getObj(20f).toString())
+        Log.v("Companion", CompanionObjClass.getObj(20f).toString())
         //Companion Object - access type 2
 
         CompanionObjClass.Companion.setVarVal(300)
@@ -154,59 +152,58 @@ class MainActivity : AppCompatActivity() {
     /*
     * Function with argument
     */
-    fun varGetSetVariable(value: String?)
-    {
-        Log.v("GeteSetVariable :",value)
+    fun varGetSetVariable(value: String?) {
+        Log.v("GeteSetVariable :", value)
     }
 
 
-    fun addValue(){
+    fun addValue() {
         //toString - type conversion
-        Log.v("AddValue :", (intVar+typeInt).toString())
+        Log.v("AddValue :", (intVar + typeInt).toString())
     }
 
 
-    fun returnValue():Float{
-        return floatVar+typeFloat
+    fun returnValue(): Float {
+        return floatVar + typeFloat
     }
 
-    fun passByReturn(a:Float,b:Int){
+    fun passByReturn(a: Float, b: Int) {
 
-        Log.v("AddValue :", (a.toInt()+ b).toString())
+        Log.v("AddValue :", (a.toInt() + b).toString())
     }
 
 
     // as and is -keywords
 
-    fun printValues(a:Int,b:Float,c:String ,d:Any){
+    fun printValues(a: Int, b: Float, c: String, d: Any) {
 
-        Log.v("Int","Int $a")
-        Log.v("Float","Float $b")
-        Log.v("String","String $c")
+        Log.v("Int", "Int $a")
+        Log.v("Float", "Float $b")
+        Log.v("String", "String $c")
 
         val aInt: Int? = a as? Int
-        Log.v("A is Int","Int $aInt")
+        Log.v("A is Int", "Int $aInt")
 
-        if(d is String) {
+        if (d is String) {
             Log.v("d is String ", "length ${d.length}")
 
-        }else if (d !is Int){
+        } else if (d !is Int) {
             Log.v("d is Float ", "Float $d")
         }
     }
 
     //Default Arguments
-    fun defaultArgument(a:Int,str:String="Hello",any:Any=str.length){
+    fun defaultArgument(a: Int, str: String = "Hello", any: Any = str.length) {
 
-        Log.v("Default Arguments :","a:$a string $str Any $any")
+        Log.v("Default Arguments :", "a:$a string $str Any $any")
     }
 
     //Function with in the function
-    fun funWithInfun(className:String,intent: Intent){
+    fun funWithInfun(className: String, intent: Intent) {
 
-        fun callActivity(intent:Intent?){
+        fun callActivity(intent: Intent?) {
 
-            intent!!.putExtra("from",className)
+            intent!!.putExtra("from", className)
             startActivity(intent)
         }
 
@@ -214,18 +211,12 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
     //Button Click Listener
 
-    fun flowView(view: View){
+    fun flowView(view: View) {
         val intent = Intent(this, FlowInterfacesSealed::class.java)
-        funWithInfun(MainActivity::class.java.canonicalName,intent)
+        funWithInfun(MainActivity::class.java.canonicalName, intent)
     }
-
-
-
-
 
 
 }

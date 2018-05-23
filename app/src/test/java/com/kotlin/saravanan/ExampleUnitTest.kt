@@ -1,4 +1,4 @@
-package com.augustasoftsol.saravanan
+package com.kotlin.saravanan
 
 import org.junit.Test
 

@@ -1,7 +1,6 @@
-package com.augustasoftsol.saravanan
+package com.kotlin.saravanan
 
 import android.util.Log
-import java.util.ArrayList
 
 object ObjClass {
 
@@ -12,13 +11,13 @@ object ObjClass {
         return value
     }
 
-    operator fun get(int: Int):Int{
-        return int+1
+    operator fun get(int: Int): Int {
+        return int + 1
     }
 
     fun callforLoop(listValues: MutableList<String>) {
 
-        var intVal=ObjClass[1]
+        var intVal = ObjClass[1]
         Log.v("intVal", intVal.toString())
 
         for (i in 0..listValues.size - 1) {
@@ -30,7 +29,6 @@ object ObjClass {
                     Log.v("when", listValues.get(i))
                 }
             }
-
 
 
         }
